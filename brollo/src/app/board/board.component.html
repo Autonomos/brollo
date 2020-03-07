@@ -1,8 +1,9 @@
-<div class="container-wrapper">
-<div class="story-container">
-<app-story class="story-cards"></app-story>
-</div>
-<div class="story-container">
-    hi
+<div class="container-wrapper" cdkDropListGroup>
+<div class="story-container" *ngFor="let board of boards"
+ cdkDropList [cdkDropListData]="board.stories" (cdkDropListDropped)="drop($event)"
+ id="{{board.id}}" cdkDropListConnectedTo="[1,2]"
+ >
+<app-story class="story-cards" [cdkDragData]="story" *ngFor="let story of board.stories" [story]="story" cdkDrag>
+</app-story>
 </div>
 </div>

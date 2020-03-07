@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Story } from '../models/story';
 
 @Component({
   selector: 'app-story',
@@ -6,26 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./story.component.scss']
 })
 export class StoryComponent implements OnInit {
-  stories: object[];
-
+@Input() story: Story
 
   constructor() { }
 
   ngOnInit() {
-    this.stories = [
-      {
-        'id': 1,
-        'title': 'Story 1'
-      },
-      {
-        'id': 2,
-        'title': 'Story 2'
-      },
-      {
-        'id': 3,
-        'title': 'Story 3'
-      }
-    ]
   }
 
 }
